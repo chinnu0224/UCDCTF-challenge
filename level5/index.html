@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Colorado Denver CTF Challenge - Level 5</title>
+ <link href="https://fonts.cdnfonts.com/css/modern-typewriter" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'MODERN TYPEWRITER', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: url('https://st3.depositphotos.com/10080544/35998/i/600/depositphotos_359988224-stock-photo-shield-icon-cyber-security-digital.jpg') center/cover no-repeat;
+    }
+    .login-container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .level-content {
+      display: none;
+      margin-top: 20px;
+      color: #555;
+    }
+    p {
+      color: #333;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container" id="loginContainer">
+    <h1>University of Colorado Denver CTF Challenge - Level 5</h1>
+    <div class="level-content" id="levelContent">
+      <p><b>Let's see how strong your networking skills are!!!</b></p>
+      <h4>Scenario:</h4>
+      <p>Last night while we were checking our network. We have intercepted communication between two parties.</p>
+      <p>The communication which we have intercepted is encrypted</p>
+      <p>Find the encrypted flag and decode it</p>
+      <p>Challenge Description:</p>
+      <p>Download the pcap file: <a href="encrypted_communication.pcap" download>encrypted_communication.pcap</a>.</p>
+      <p>Use Wireshark to analyze the pcap file.</p>
+      <a href="https://level6.team2324ucd.online/">Unlock Level-6</a>
+    </div>
+  </div>
+  <script>
+   window.onload = function() {
+      authenticate();
+    };
+    function authenticate() {
+      const validCredentials = {
+        username: 'level5',
+        password: 'level5'
+      };
+      const enteredUsername = window.prompt('Enter your username:');   
+      const enteredPassword = window.prompt('Enter your password:');
+        // Check if the user canceled the prompt
+      if (enteredUsername === null) {
+        window.location.href = 'un.html'
+        return;
+      }
+      if (enteredUsername === validCredentials.username && enteredPassword === validCredentials.password) {
+        // Authentication successful
+        alert('Authentication successful! Welcome to Level 5.');
+        // Hide the login button and show the level content
+        document.getElementById('levelContent').style.display = 'block';
+      } else {
+        // Authentication failed
+        window.location.href = 'un.html'
+      }
+    }
+  </script>
+
+</body>
+</html>

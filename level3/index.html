@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Colorado Denver CTF Challenge - Level 3</title>
+  <link href="https://fonts.cdnfonts.com/css/modern-typewriter" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'MODERN TYPEWRITER', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: url('hackerbg.png') center/cover no-repeat;
+    }
+    .login-container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .level-content {
+      display: none;
+      margin-top: 20px;
+      color: #555;
+    }
+    p {
+      color: #333;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <h1>University of Colorado Denver CTF Challenge- Level 3</h1>
+        <div class="level-content" id="levelContent">
+            <p>The Sentinel's Cipher: A Cybersecurity Odyssey Beneath the sunlit peaks, the University of Colorado Denver holds the key to infinite knowledge Find the shift key in the Apollo snap and decrypt the Apollo file</p>
+            <a href="Apollo.png" download="The_Sentinel's_Emblem.png">Download The Apollo snap</a>
+            <p>Decrypt the Whisper audio file to find the flag Use the name of the audio file to decrypt the cipher</p>
+            <a href="Whisper.wav" download="Sentinel_Whisper.wav">Download The Sentinel's Whisper</a>
+            <p>SOLVE THE MYSTERY QUESTION TO GET THE FLAG</p>
+            <a href="/level4/index.html">Unlock Level-4</a>
+        </div>
+    </div>
+
+  <script>
+   window.onload = function() {
+      authenticate();
+    };
+    function authenticate() {
+      const validCredentials = {
+        username: 'level3',
+        password: 'level3'
+      };
+      const enteredUsername = window.prompt('Level3-Enter your username:');
+      const enteredPassword = window.prompt('Level3-Enter your password:');
+      
+      // Check if the user canceled the prompt
+      if (enteredUsername === null) {
+        window.location.href = 'un.html'
+        return;
+      }
+      if (enteredUsername === validCredentials.username && enteredPassword === validCredentials.password) {
+        // Authentication successful
+        alert('Authentication successful! Welcome to Level 3.');
+       
+        document.getElementById('levelContent').style.display = 'block';
+      } else {
+        // Authentication failed
+        window.location.href = 'un.html'
+      }
+    }
+  </script>
+</body>
+</html>

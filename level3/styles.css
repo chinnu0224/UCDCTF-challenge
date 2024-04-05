@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+}
+
+section#challenge {
+    margin: 2em;
+}
+
+#downloads {
+    margin-bottom: 2em;
+}
+
+#downloads button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#downloads button:hover {
+    background-color: #005f6b;
+}
+
+#submission form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+#submission input[type="text"] {
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+#submission input[type="submit"] {
+    padding: 0.5em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.8em;
+}

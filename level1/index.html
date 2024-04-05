@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Colorado Denver CTF Challenge - Level 1</title>
+  <link href="https://fonts.cdnfonts.com/css/modern-typewriter" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'MODERN TYPEWRITER', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: url('lockbg.png') center/cover no-repeat;
+    }
+
+    .login-container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .level-content {
+      display: none;
+      margin-top: 20px;
+      color: #555;
+    }
+
+    p {
+      color: #333;
+      line-height: 1.5;
+    }
+
+    #unauthorizedMessage {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+ <div class="login-container" id="loginContainer">
+    <div class="level-content" id="levelContent">
+        
+       <h1>University of Colorado  CTF Challenge - Level 1</h1>
+      <p>Hi Students, Our Professor Haadi Jafarian has mentioned in his lecture class that he met Diffie-Hellman at a Conference</p>
+      <p>We have somehow managed to intercept their Confidential discussion</p>
+      <p>They have briefly discussed about Nine previous research papers while drinking Seven glasses of wine <br>Then debated over Six algorithms of Cryptography reffering to Eight books of renowned authors.</p>
+     
+      
+     <a href="/level2/index.html">Unlock Level 2</a>
+  </div>
+  </div>
+  
+  <script>
+    window.onload = function() {
+      authenticate();
+    };
+
+    function authenticate() {
+      const validCredentials = {
+        username: 'level1',
+        password: 'welcome'
+      };
+
+      const enteredUsername = window.prompt('Level1-Enter your username:');
+      
+      // Check if the user canceled the prompt
+      if (enteredUsername === null) {
+        window.location.href = 'un.html'
+        return;
+      }
+
+      const enteredPassword = window.prompt('Level1-Enter your flag:');
+
+      if (enteredUsername === validCredentials.username && enteredPassword === validCredentials.password) {
+        // Authentication successful
+        alert('Congrats you have opened the door to level-1 :');
+        document.getElementById('levelContent').style.display = 'block';
+        document.getElementById('unauthorizedMessage').style.display = 'none';
+      } else {
+        // Authentication failed
+        window.location.href = 'un.html'
+      }
+    }
+  </script>
+</body>
+</html>
